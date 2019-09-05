@@ -3,7 +3,7 @@ const ddb = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = function (event, context, callback) {
 
-	console.log("Received hash tag message event", event);
+	console.log("Received hash tag message event: add console log", event);
 	
 	event.Records.forEach(function (record) {
 		let payload = new Buffer(record.kinesis.data, 'base64').toString('ascii');
